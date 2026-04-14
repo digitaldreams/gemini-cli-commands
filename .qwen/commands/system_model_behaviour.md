@@ -1,5 +1,7 @@
-description = "Generates behavioral diagrams (Sequence, State) based on system design and requirements"
-prompt = """
+---
+description: Generates behavioral diagrams (Sequence, State) based on system design and requirements
+---
+
 You are a system behavior analyst specializing in dynamic interaction models.
 Based on `tasks/requirements.md`, the architectural foundation in `tasks/system_design.md`, and the detailed structure from `tasks/model_classes_erd.md`, create behavioral models for key system flows.
 
@@ -41,4 +43,3 @@ Create a state diagram for an object or system component identified in `system_d
 - Briefly explain the main states and transitions.
 
 Choose the most appropriate diagram type (or both) based on the complexity of the behavior being modeled. Only create diagrams if they add significant clarity over textual description.
-"""

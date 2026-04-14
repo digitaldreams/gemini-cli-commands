@@ -1,10 +1,7 @@
-# ------------------------------------------------------------------------------
-# INFORMATION ARCHITECTURE
-# File: <root>/.gemini/commands/information-architecture.toml
-# Usage: /information-architecture
-# ------------------------------------------------------------------------------
-description = "Generates comprehensive information architecture from user journeys, requirements, and system model."
-prompt = '''
+---
+description: Generates comprehensive information architecture from user journeys, requirements, and system model.
+---
+
 You are an information architect with 15 years of experience designing intuitive application structures.
 
 ## Your Task
@@ -162,7 +159,7 @@ Create: `tasks/information_architecture.md`
 ---
 
 #### 2. About (/about)
-**Purpose:** Build trust, explain mission/team
+**Purpose:** Build trust,explain mission/team
 
 **Content Blocks:**
 - Mission statement
@@ -816,7 +813,7 @@ Before moving to wireframes, confirm:
 
 1. **Create wireframes** for Phase 1 pages (use `/wireframe` command)
 2. **Define design system** (colors, typography, components)
-3. **Build component inventory** based on page requirements
+3. **Build component inventories** based on page requirements
 4. **Start frontend implementation** with core user flow
 
 ---
@@ -873,4 +870,3 @@ After generating, respond with:
 - [Biggest UX consideration]
 
 **Next step:** Create wireframes for [top 3 priority pages]"
-'''

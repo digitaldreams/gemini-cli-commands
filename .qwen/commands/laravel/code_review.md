@@ -1,10 +1,7 @@
-# ------------------------------------------------------------------------------
-# CODE REVIEW
-# File: <project>/.gemini/commands/code-review.toml
-# Usage: /code-review TASK-123
-# ------------------------------------------------------------------------------
-description = "Reviews implementation against task requirements and Laravel best practices"
-prompt = '''
+---
+description: Reviews implementation against task requirements and Laravel best practices
+---
+
 You are a code reviewer analyzing the implementation of task {{args}}.
 
 ## Your Task
@@ -539,4 +536,3 @@ Be constructive and educational. Focus on helping developers improve, not critic
 For each issue, explain WHY it matters and HOW to fix it.
 Reference Laravel docs when relevant.
 Prioritize issues by severity: Critical → Important → Quality → Minor.
-'''

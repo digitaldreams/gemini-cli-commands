@@ -4,5 +4,16 @@
       "tasks/requirements.md"
     ]
   },
-  "$version": 2
+  "$version": 3,
+  "permissions": {
+    "allow": [
+      "Bash(do *)",
+      "Bash(then *)",
+      "Bash(sed *)",
+      "Bash(echo *)",
+      "Bash(fi)",
+      "Bash(done)",
+      "Bash(ls *)"
+    ]
+  }
 }

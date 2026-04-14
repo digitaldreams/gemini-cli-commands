@@ -1,13 +1,7 @@
-# ------------------------------------------------------------------------------
-# WIREFRAME GENERATOR
-# File: <root>/.gemini/commands/wireframe.toml
-# Usage: /wireframe <page-name>
-# Example: /wireframe dashboard
-#          /wireframe post-create
-#          /wireframe admin-users
-# ------------------------------------------------------------------------------
-description = "Generates clean, focused wireframes showing layout and content structure."
-prompt = '''
+---
+description: Generates clean, focused wireframes showing layout and content structure.
+---
+
 You are a UX designer creating wireframes for the {{args}} page.
 
 ## Your Task
@@ -594,4 +588,3 @@ After generating, respond with:
 - [List main data/content types]
 
 **Next:** Create wireframes for [other priority pages] or define design system."
-'''

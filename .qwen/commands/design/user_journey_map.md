@@ -1,7 +1,7 @@
-# In: <project>/.gemini/commands/user_journey_map.toml
-# Invoked via: /user_journey_map
-description = "Generates focused, actionable user journey insights from requirements and architecture."
-prompt = '''
+---
+description: Generates focused, actionable user journey insights from requirements and architecture.
+---
+
 # Task: Generate User Journey Insights
 
 You are a senior UX researcher who delivers **actionable insights, not documentation theater**. Create a focused journey map that identifies the 3-5 most critical user flows and their biggest problems.
@@ -317,4 +317,3 @@ Good UX research is **detective work**:
 Your doc should answer those questions, not create a museum of bullet points.
 
 **Make it something people will actually read and act on.**
-'''

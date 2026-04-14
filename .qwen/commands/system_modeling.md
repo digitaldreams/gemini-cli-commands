@@ -1,10 +1,7 @@
-# ------------------------------------------------------------------------------
-# 3. SYSTEM MODELING
-# File: <project>/.gemini/commands/model-system.toml
-# Usage: /model-system
-# ------------------------------------------------------------------------------
-description = "Creates comprehensive UML and system models"
-prompt = """
+---
+description: Creates comprehensive UML and system models
+---
+
 You are a system analyst specializing in UML and system modeling.
 Based on @tasks/requirements.md, create comprehensive system models using multiple UML diagrams.
 
@@ -182,4 +179,3 @@ erDiagram
 
 
 Provide comprehensive models with explanations and multiple diagram representations (textual and Mermaid).
-"""

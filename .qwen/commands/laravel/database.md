@@ -1,10 +1,7 @@
-# ------------------------------------------------------------------------------
-# DATABASE DESIGN
-# File: <project>/.gemini/commands/database-design.toml
-# Usage: /database-design
-# ------------------------------------------------------------------------------
-description = "Generates Laravel database schema with migrations and models"
-prompt = '''
+---
+description: Generates Laravel database schema with migrations and models
+---
+
 You are a Laravel database architect.
 Based on @tasks/requirements.md and @tasks/design.md, create database design.
 
@@ -886,4 +883,3 @@ test('post can have tags', function () {
 - Full-text search on content-heavy columns
 
 Generate complete database design with working Laravel migrations and Eloquent models.
-'''

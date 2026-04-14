@@ -1,10 +1,7 @@
-# ------------------------------------------------------------------------------
-# VSA ARCHITECTURE GENERATOR
-# File: <root>/.gemini/commands/vsa-structure.toml
-# Usage: /vsa-structure
-# ------------------------------------------------------------------------------
-description = "Generates a complete Vertical Slice Architecture (VSA) folder structure for Next.js 15 based on information architecture."
-prompt = '''
+---
+description: Generates a complete Vertical Slice Architecture (VSA) folder structure for Next.js 15 based on information architecture.
+---
+
 You are a senior architect designing a Vertical Slice Architecture (VSA) for a Next.js 15 application.
 
 ## Core Principles of VSA
@@ -964,192 +961,59 @@ const { user } = useAuth()  // Shared context
 - **camelCase with use prefix:** `usePostList.js`, `useAuth.js`
 
 ### Utils
-- **camelCase:** `postUtils.js`, `formatDate.js`, `validation.js`
+- **camelCase:** `postUtils.js`, `dashboardUtils.js`
 
-### Constants
-- **camelCase:** `routes.js`, `config.js`, `status.js`
+### Schemas
+- **camelCase:** `loginSchema.js`, `postSchema.js`
 
-### Schemas (Validation)
-- **camelCase with schema suffix:** `loginSchema.js`, `postSchema.js`
-
----
-
-## Example File Contents
-
-### Route File (Thin)
-
-\`\`\`javascript
-// app/(app)/posts/page.jsx
-import PostListPage from '@/features/posts/list'
-
-export const metadata = {
-  title: 'Posts - App Name',
-  description: 'Browse all posts',
-}
-
-export default function PostsRoute() {
-  return <PostListPage />
-}
-\`\`\`
+### Styles
+- **kebab-case with module:** `home.module.css` (if needed)
 
 ---
 
-### Feature Index (Main Component)
+## VSA vs Traditional Architecture
 
-\`\`\`javascript
-// features/posts/list/index.js
-'use client'
-
-import { PostGrid } from './PostGrid'
-import { PostFilters } from './PostFilters'
-import { usePostList } from './usePostList'
-import { Button } from '@/components/ui/button'
-import { Spinner } from '@/components/ui/spinner'
-
-export default function PostListPage() {
-  const { posts, loading, filters, setFilters } = usePostList()
-
-  if (loading) return <Spinner size="lg" />
-
-  return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="flex justify-between items-center mb-8">
-        <h1 className="text-4xl font-bold">Posts</h1>
-        <Button href="/posts/create">Create Post</Button>
-      </div>
-
-      <PostFilters filters={filters} onChange={setFilters} />
-      <PostGrid posts={posts} />
-    </div>
-  )
-}
-\`\`\`
+| Aspect | VSA | Traditional |
+|--------|-----|-------------|
+| Organization | By feature | By technical layer |
+| Finding code | Go to feature folder | Search across folders |
+| Adding features | New folder, done | Touch many files |
+| Deleting features | Delete folder | Hunt down scattered code |
+| Team scaling | Parallel work | Merge conflicts |
+| Learning curve | Low (feature-based) | Higher (patterns) |
 
 ---
 
-### Feature Component
+## Validation Checklist
 
-\`\`\`javascript
-// features/posts/list/PostGrid.jsx
-import { PostCard } from './PostCard'
+After generating the structure, verify:
 
-export function PostGrid({ posts }) {
-  return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {posts.map(post => (
-        <PostCard key={post.id} post={post} />
-      ))}
-    </div>
-  )
-}
-\`\`\`
-
----
-
-### Feature Hook
-
-\`\`\`javascript
-// features/posts/list/usePostList.js
-import { useState, useEffect } from 'react'
-import { api } from '@/lib/api/client'
-
-export function usePostList() {
-  const [posts, setPosts] = useState([])
-  const [loading, setLoading] = useState(true)
-  const [filters, setFilters] = useState({ category: 'all', sort: 'recent' })
-
-  useEffect(() => {
-    const fetchPosts = async () => {
-      setLoading(true)
-      const data = await api.get('/posts', { params: filters })
-      setPosts(data)
-      setLoading(false)
-    }
-
-    fetchPosts()
-  }, [filters])
-
-  return { posts, loading, filters, setFilters }
-}
-\`\`\`
-
----
-
-### Shared UI Component
-
-\`\`\`javascript
-// components/ui/button/Button.jsx
-export function Button({ children, variant = 'primary', ...props }) {
-  const variants = {
-    primary: 'bg-blue-600 hover:bg-blue-700 text-white',
-    secondary: 'bg-gray-200 hover:bg-gray-300 text-gray-900',
-  }
-
-  return (
-    <button
-      className={`px-4 py-2 rounded-md ${variants[variant]}`}
-      {...props}
-    >
-      {children}
-    </button>
-  )
-}
-\`\`\`
-
----
-
-## Checklist for New Features
-
-When adding a new feature:
-
-- [ ] Create feature folder: `features/<feature-name>/`
-- [ ] Add main component: `index.js` (default export)
-- [ ] Add feature components (components used only here)
-- [ ] Add feature hook(s) for data/logic
-- [ ] Add route in `app/` (thin file that imports feature)
-- [ ] Add to navigation (if needed)
-- [ ] Import shared components from `@/components/ui/`
-- [ ] Import shared hooks from `@/hooks/`
-- [ ] Add tests (if applicable)
-- [ ] Update documentation
-
----
-
-## Summary
-
-**VSA Principles:**
-1. ✅ Organize by feature, not by technical layer
-2. ✅ Keep related code together
-3. ✅ Make features independent
-4. ✅ Share only what's truly shared
-5. ✅ Scale by adding features, not by restructuring
-
-**Folder Hierarchy:**
-- `app/` → Routes only (thin files)
-- `features/` → Feature slices (thick files with logic)
-- `components/ui/` → Shared UI components
-- `lib/` → Shared utilities
-- `hooks/` → Shared hooks
-
-**Key Rule:** If it's used by only one feature, it goes IN that feature. If it's shared, it goes in `components/`, `lib/`, or `hooks/`.
+- [ ] Every page in IA has a route in app/
+- [ ] Every route delegates to a feature slice
+- [ ] Every feature is self-contained
+- [ ] Shared components are truly shared (2+ uses)
+- [ ] No circular dependencies between features
+- [ ] Import paths use absolute imports (@/)
+- [ ] File naming follows conventions
+- [ ] Hooks follow useXxx pattern
 
 ---
 
 ## Next Steps
 
-1. **Review this structure** with your team
-2. **Start with one feature** (e.g., authentication)
-3. **Build the pattern** (create folders, add components)
-4. **Replicate for other features**
-5. **Refactor as you learn** what works best for your team
+1. **Review structure** with team
+2. **Create base folders** with package.json
+3. **Set up absolute imports** in tsconfig/jsconfig
+4. **Implement first feature** (e.g., auth)
+5. **Document patterns** as team conventions emerge
 
 ---
 
 ## Related Documents
 
-- Information Architecture: `design/information_architecture.md`
 - Component Inventory: `design/component_inventory.md`
 - Design System: `design/design_system.md`
+- Information Architecture: `design/information_architecture.md`
 
 ```
 
@@ -1159,34 +1023,15 @@ When adding a new feature:
 
 After generating, respond with:
 
-"✅ Created VSA Architecture structure
+"✅ Created VSA Architecture for Next.js 15
 
-**Structure Overview:**
-- App Router: [X] route groups, [Y] pages
-- Features: [Z] feature slices identified
-- Shared Components: [N] UI components
-- Shared Utilities: [M] utility modules
+**Structure:**
+- [X] route groups identified
+- [Y] feature slices created
+- [Z] shared components cataloged
 
-**Key Features:**
-[List 5-7 main features like: auth, dashboard, posts, profile, admin]
+**Key decisions:**
+- Co-location strategy: [explain]
+- Shared threshold: [explain]
 
-**Route Groups:**
-- (public): Public pages
-- (auth): Authentication flows
-- (app): Authenticated user pages
-- (admin): Admin-only pages
-
-**Benefits:**
-- ✅ Self-contained features
-- ✅ Easy to add/remove features
-- ✅ Clear code organization
-- ✅ Scales with team size
-
-**Next steps:**
-1. Review structure with team
-2. Start building Phase 1 components (from component inventory)
-3. Implement first feature (recommendation: auth/login)
-4. Use `/page-generator` to create pages following this structure
-
-**File created:** `docs/vsa_structure.md`"
-'''
+**Next step:** Implement first feature slice"

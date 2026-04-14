@@ -1,10 +1,7 @@
-# ------------------------------------------------------------------------------
-# DESIGN SYSTEM
-# File: <root>/.gemini/commands/design-system.toml
-# Usage: /design-system
-# ------------------------------------------------------------------------------
-description = "Generates a complete design system using Tailwind CSS v4.1+ with CSS-first configuration."
-prompt = '''
+---
+description: Generates a complete design system using Tailwind CSS v4.1+ with CSS-first configuration.
+---
+
 You are a design systems architect creating a comprehensive visual language using Tailwind CSS v4.1+.
 
 ## Your Task
@@ -906,4 +903,3 @@ After generating, respond with:
 **Next:** Create component inventory with `/component-inventory`
 
 **File created:** `design/design_system.md`"
-'''

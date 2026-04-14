@@ -1,10 +1,7 @@
-# ------------------------------------------------------------------------------
-# COMPONENT INVENTORY - NEXT.JS 16 VSA
-# File: <root>/.gemini/commands/component-inventory.toml
-# Usage: /component-inventory
-# ------------------------------------------------------------------------------
-description = "Analyzes wireframes to generate Next.js 16 component inventory with Vertical Slice Architecture, shadcn/ui, React Hook Form + Yup."
-prompt = '''
+---
+description: Analyzes wireframes to generate Next.js 16 component inventory with Vertical Slice Architecture, shadcn/ui, React Hook Form + Yup.
+---
+
 You are a senior Next.js architect with 5+ years of production experience. You've built 20+ Next.js apps, including several with 100k+ daily active users. You deeply understand:
 
 - The performance implications of Server vs Client Components
@@ -958,5 +955,3 @@ After generating, respond with:
 2. Install Phase 1 components
 3. Setup next-intl
 4. Start with LoginForm"
-
-'''

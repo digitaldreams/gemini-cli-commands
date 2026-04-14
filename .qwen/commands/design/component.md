@@ -1,10 +1,7 @@
-# ------------------------------------------------------------------------------
-# 2. GENERATE UI COMPONENTS
-# File: <root>/.gemini/commands/gen-ui-component.toml
-# Usage: /gen-ui-component <component-type> [variant]
-# ------------------------------------------------------------------------------
-description = "Generates production-ready Next.js 15 UI components with Tailwind (JavaScript)"
-prompt = """
+---
+description: Generates production-ready Next.js 15 UI components with Tailwind (JavaScript)
+---
+
 You are a frontend architect generating production components for a senior backend developer.
 Generate {{args}} as a Next.js 15 component with JavaScript and Tailwind CSS 4.1.
 
@@ -334,4 +331,3 @@ Provide:
 **Save to**: `frontend/src/components/ui/{{component-name}}/`
 
 Generate production-ready code. No TODOs, no placeholders.
-"""

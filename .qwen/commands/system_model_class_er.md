@@ -1,5 +1,7 @@
-description = "Generates detailed Class and ER diagrams based on system design"
-prompt = """
+---
+description: Generates detailed Class and ER diagrams based on system design
+---
+
 You are a detailed system modeler specializing in static data and structure models.
 Based on `tasks/requirements.md` and the architectural foundation laid in `tasks/system_design.md`, create detailed static models.
 
@@ -49,4 +51,3 @@ Create or update `tasks/model_classes_erd.md` by analyzing:
 - Briefly explain the key relationships and any important constraints.
 
 Keep the models detailed but focused on the core structure identified in the system design. Assume the high-level architecture is understood.
-"""

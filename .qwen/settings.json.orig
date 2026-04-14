@@ -1,5 +1,8 @@
 {
-    "contextFileName":[
-        "tasks/requirements.md"
+  "context": {
+    "fileName": [
+      "tasks/requirements.md"
     ]
+  },
+  "$version": 2
 }

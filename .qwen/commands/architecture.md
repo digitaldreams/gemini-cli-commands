@@ -1,10 +1,7 @@
-# ------------------------------------------------------------------------------
-# ARCHITECTURAL DESIGN (Web Development Focused)
-# File: <project>/.gemini/commands/design-architecture.toml
-# Usage: /design-architecture
-# ------------------------------------------------------------------------------
-description = "Creates practical architectural design for web development"
-prompt = """
+---
+description: Creates practical architectural design for web development
+---
+
 You are a web architect. Based on @tasks/requirements.md, create a practical architecture design.
 
 Create `tasks/architecture.md` with:
@@ -258,4 +255,3 @@ Quick notes on important choices:
 - **[Trade-off]**: What we gain/lose
 
 Keep it practical. Focus on what a developer needs to start building.
-"""

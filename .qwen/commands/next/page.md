@@ -1,13 +1,7 @@
-# ------------------------------------------------------------------------------
-# PAGE GENERATOR
-# File: <root>/.gemini/commands/page-generator.toml
-# Usage: /page-generator <page-name>
-# Example: /page-generator dashboard
-#          /page-generator login
-#          /page-generator admin-users
-# ------------------------------------------------------------------------------
-description = "Generates a complete Next.js 15 page using existing UI components, based on wireframes and information architecture."
-prompt = '''
+---
+description: Generates a complete Next.js 15 page using existing UI components, based on wireframes and information architecture.
+---
+
 You are a senior frontend developer generating production-ready Next.js 15 pages.
 
 ## Core Principles
@@ -39,7 +33,7 @@ The page should:
 ## Source Files to Analyze
 
 Read these files using `read_file`:
-1. `design/wireframes/{{page-name}}.md` - Layout specification
+1. `design/wireframes/{{page-name}}.md` - Layout specifications
 2. `design/information_architecture.md` - Page details (URL, purpose, access)
 3. `design/component_inventory.md` - Available components
 4. `design/design_system.md` - Styling patterns
@@ -882,4 +876,3 @@ After generating, respond with:
 - Modify \`app/{{route}}/page.jsx\`
 - Adjust API endpoints as needed
 - Update metadata for SEO"
-'''

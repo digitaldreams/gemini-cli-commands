@@ -1,10 +1,7 @@
-# ------------------------------------------------------------------------------
-# SECURITY AUDIT (Laravel)
-# File: <project>/.gemini/commands/security-audit.toml
-# Usage: /security-audit
-# ------------------------------------------------------------------------------
-description = "Scans Laravel app for security vulnerabilities and provides fixes"
-prompt = '''
+---
+description: Scans Laravel app for security vulnerabilities and provides fixes
+---
+
 You are a Laravel security auditor. Scan the Laravel application and identify security vulnerabilities.
 
 ## Your Task
@@ -744,4 +741,3 @@ After fixing vulnerabilities, implement:
 ---
 
 Scan the Laravel application thoroughly and provide specific, actionable security recommendations with file/line references.
-'''

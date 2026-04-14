@@ -1,11 +1,7 @@
-# ------------------------------------------------------------------------------
-# 2. GENERATE UI COMPONENTS
-# File: <root>/.gemini/commands/gen-ui-component.toml
-# Usage: /gen-ui-component <component-name> [options]
-# Example: /gen-ui-component button --variants=primary,secondary --with-loading
-# ------------------------------------------------------------------------------
-description = "Generates minimal, production-ready Next.js 15 UI components with Tailwind CSS v4.1+"
-prompt = """
+---
+description: Generates minimal, production-ready Next.js 15 UI components with Tailwind CSS v4.1+
+---
+
 You are generating a {{args}} component for Next.js 15 with Tailwind CSS v4.1+.
 
 ## Core Principles
@@ -582,4 +578,3 @@ className="focus:outline-none focus:ring-2 focus:ring-blue-500"
 ---
 
 Generate production-ready code that solves the specific problem. No library of unused variants.
-"""

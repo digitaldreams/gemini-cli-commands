@@ -1,10 +1,7 @@
-# ------------------------------------------------------------------------------
-# TASK IMPLEMENTATION PLAN
-# File: <project>/.gemini/commands/task-plan.toml
-# Usage: /task-plan TASK-123
-# ------------------------------------------------------------------------------
-description = "Generates implementation plan for a task based on project architecture"
-prompt = '''
+---
+description: Generates implementation plan for a task based on project architecture
+---
+
 You are a Laravel architect. Create an implementation plan for task {{args}}.
 
 ## Process
@@ -748,4 +745,3 @@ After completing this task:
 ---
 
 Adapt this plan based on task complexity. Simple CRUD? Skip service layer and events. Complex workflow? Add more detail.
-'''

@@ -1,10 +1,7 @@
-# ------------------------------------------------------------------------------
-# CREATE DEVELOPMENT TASKS
-# File: <project>/.gemini/commands/create-tasks.toml
-# Usage: /create-tasks
-# ------------------------------------------------------------------------------
-description = "Breaks down requirements into Epics and actionable tasks"
-prompt = """
+---
+description: Breaks down requirements into Epics and actionable tasks
+---
+
 You are a technical project manager.
 Based on
 - @tasks/requirements.md
@@ -385,4 +382,3 @@ Always list which tasks must be completed first:
 ---
 
 Create comprehensive task breakdown organized by Epics. Each Epic should represent a major feature area with clear user value.
-"""
