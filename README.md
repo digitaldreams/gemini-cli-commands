@@ -2,6 +2,27 @@
 
 The Software Engineering Lifecycle (SELC) is the structured process of creating software applications. Think of it like building a house: you start with planning and design, then construction, testing, and finally maintenance. In software terms, this means understanding what needs to be built, designing the solution, writing the code, testing it thoroughly, and then maintaining and improving it over time.
 
+## Installation
+
+### Install Qwen Code
+Qwen Code is an AI-powered coding assistant. Install it via the official documentation:
+- **Installation Guide**: https://qwenlm.github.io/qwen-code-docs/en/users/overview/
+- **Custom Commands Documentation**: https://qwenlm.github.io/qwen-code-docs/en/users/features/commands/#1-slash-commands-
+
+### Install Gemini CLI
+Gemini CLI provides terminal-based AI assistance. Install it from the official documentation:
+- **Installation Guide**: https://geminicli.com/docs/
+- **Custom Commands Documentation**: https://geminicli.com/docs/cli/custom-commands/
+
+> **⚠️ WARNING**: These commands expect a `tasks/` folder as a sibling of the `.gemini/` and `.qwen/` folders. Additionally, a `requirements.md` file inside the `tasks/` folder is **mandatory** for the commands to work properly. Ensure your project structure looks like this:
+> ```
+> your-project/
+> ├── .gemini/
+> ├── .qwen/
+> └── tasks/
+>     └── requirements.md
+> ```
+
 ## Available Commands
 
 This project includes a collection of automated commands that support the full software development lifecycle. Each command is designed for specific tasks in the development process:
